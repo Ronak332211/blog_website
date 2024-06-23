@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Personal Blog</title>
+</head>
+<body>
+    <div class="header">
+        <h1 id="title">Personal Blog<div id="cursor"></div></h1>
+    </div>
+    <div class="create-post-container">
+        <a class="create-post-btn" href="/posts/new">Create New Post</a>
+    </div>
+    <div class="posts-container">
+        <% posts.forEach(post => { %>
+            <div class="post-box">
+                <h2><a href="/posts/<%= post._id %>"><%= post.title %></a></h2>
+                <p><%= post.content.split(' ').slice(0, 30).join(' ') %>... <span class="read-more" onclick="toggleContent('<%= post._id %>')">Read more</span></p>
+                <div id="post-<%= post._id %>" class="full-content" style="display: none;">
+                    <p><%= post.content %> <span class="show-less" onclick="toggleContent('<%= post._id %>')">Show less</span></p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
