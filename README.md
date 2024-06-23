@@ -20,5 +20,5 @@ This project is part of my internship as a Full Stack Developer with Bharat Inte
 ## Clone the repository
 
    
-   git clone https://github.com/your_username/personal-blog.git
+   git clone https://github.com/Ronak332211/blog_website.git
    
